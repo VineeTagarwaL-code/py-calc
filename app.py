@@ -14,7 +14,9 @@ def advanced():
 @app.route("/simple")
 def simple():
     return render_template('simple.html')
-
+@app.route("/health", methods=["get"])
+def healthcheck():
+    return "Server is up and running"
 @app.route("/calculate",methods=["post"])
 def calculate():
     first_number=int(request.form["firstNumber"])
